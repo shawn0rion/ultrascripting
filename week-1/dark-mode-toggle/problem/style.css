@@ -1,0 +1,56 @@
+:root{
+    --primary-clr: #222;
+    --secondary-clr: #fff;
+}
+
+/* body and slider have same default colro, but diff default class */
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 2;
+    color: var(--primary-clr);
+    background-color: var(--secondary-clr);
+}
+
+nav{
+    height: 64px;
+}
+
+/* class level */
+.slider{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    margin: 0 0 0 auto;
+    border-radius: 30px;
+    color: var(--primary-clr);
+    background-color: var(--secondary-clr);
+}
+
+.slider button{
+    display: flex;
+    align-items: center;
+    border: 0px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: transparent;
+    font-size: 2.2rem;
+}
+
+#light-btn{
+    color: var(--secondary-clr);
+}
+
+#dark-btn{
+    color: var(--primary-clr)
+}
+
+.dark-mode{
+    color: var(--secondary-clr);
+    background-color: var(--primary-clr);
+}
