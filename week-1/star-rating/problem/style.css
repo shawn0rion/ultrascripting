@@ -1,0 +1,85 @@
+body{
+    background: #222;
+    color:#f9f9f9;
+    height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: grid;
+    place-items: center;
+    outline: 0; 
+    border: 0;
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+}
+
+#rating-form{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 250px;
+    border: 1px solid #fff;
+    width: 400px;
+    border-radius: 20px;
+    background-color: #f9f9f9
+}
+
+.star-checkbox{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.star-checkbox input[type="checkbox"]{
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.star-checkbox label::before,
+.star-checkbox.active > label::before{
+    font-family: "Font Awesome 5 free";
+    font-size: 2rem;
+    color: gold;
+    background-color: transparent;
+    content: "\f005";
+}
+
+.stars{
+    display: flex;
+    gap: 10px;
+}
+
+.star-checkbox label::before{
+    font-weight: 200;
+}
+
+.star-checkbox.active label::before{
+    content: "\f005";
+    font-weight: 900;
+} 
+
+#submit-stars{
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    background-color: #fff;
+    transition: .2s ease;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+#submit-stars.disabled{
+    cursor: not-allowed;
+}
+
+#submit-stars:not(.disabled):hover,
+#submit-stars:not(.disabled):focus{
+    background-color: #dbdbdb;
+}
+
