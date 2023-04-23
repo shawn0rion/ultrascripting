@@ -1,0 +1,134 @@
+:root{
+    --primary-clr: #6e57d2;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 100vh;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    min-height: 400px;
+    /* grid-template-columns: repeat(3, 1fr); */
+
+}
+
+.card{
+
+    width: 100%;
+    border: 1px solid #000;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* padding-bottom: 20px; */
+    cursor: pointer;
+    transition: .2s ease;
+    padding: 4% 0;
+    min-height: 250px;
+
+}
+
+.card:hover{
+    background-color: var(--primary-clr);
+    color:#fff;
+}
+
+.card:hover .links i{
+    color:#fff;
+}
+
+.card:hover img{
+    border-color: #fff;
+    /* width: 130px; */
+}
+
+.card:hover .img-container{
+    transform: scale(1.1);
+}
+
+.card img{
+    border: 10px solid var(--primary-clr);
+    border-radius: 50%;
+    width: 100px;
+    /* max-width: 120px; */
+    margin: 0 auto;
+}
+
+.img-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.name{
+    font-size: 1.5rem;
+
+}
+
+.role{
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+    margin: 10px 0 40px 0;
+}
+
+.links{
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    gap: 10%;
+}
+
+.social-link i{
+    font-size:1.2rem;
+    color: #444;
+}
+
+.social-link:hover i{
+    color: #999;
+}
+
+
+@media screen and (min-width: 1000px) {
+    .card-container{
+        width: 80%;
+    }
+    
+    .card{
+        height:400px;
+        width: calc(33.33% - 40px);
+    }
+
+    .card img{
+        width: 125px;
+        max-width: 150px;
+    }
+
+    .name{
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+    }
+
+    .role{
+        font-size: 1.3rem;
+    }
+
+    .links i{
+        font-size: 1.3rem;
+    }
+}
