@@ -1,10 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
 body{
     display: grid;
     place-items: center;
     height: 100vh;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 100;
+    background-image: url('https://img.freepik.com/premium-vector/light-blue-abstract-background-with-bokeh-form-circles_78007-671.jpg');
+     background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#convert{
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    width: 50px;
+    height: 30px;
+    font-size: 1rem;
+}
+
+button{
+    cursor: pointer;
+    transition: .5s ease;
 }
 
 .container{
+    position: relative;
     padding: 20px;
     width: 300px;
     border: 1px solid #999;
@@ -14,22 +36,56 @@ body{
     align-items: center;
     justify-content: center;
     text-align: center;
+    background-color: rgba(255,255,255,.5);
 }
 
+#search-form{
+    display: flex;
+}
+
+#search-input{
+    font-size: 1.2rem;
+    background: transparent;
+    border: 0px;
+    width: 100%;
+    border-bottom: 1px solid #999;
+    padding-left: 5px;
+    outline: 0;
+}
+
+#submit{
+    margin-left: 10px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    padding: 5px;
+    border-color: #eee;
+    outline: 0;
+}
+
+button:hover,
+button:focus{
+    border-color:  #000;
+}
+
+
 #location{
-    font-size: 2rem;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
 }
 
 #description{
-    font-size: 1.8rem;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
 }
 
 #temp{
     font-size: 3rem;
+    letter-spacing: 3px;
 }
 
 .temps{
     display: flex;
+    font-size: 1.2rem;
 }
 
 .container img{
@@ -45,5 +101,38 @@ body{
 }
 
 .min {
-    border-right: 1px solid #bbb;
+    border-right: 1px solid #2c2b2b;
+}
+
+/* Clouds */
+.clouds {
+  background-image: url("https://i.ytimg.com/vi/Wimkqo8gDZ0/maxresdefault.jpg");
+ }
+
+/* Clear */
+.clear {
+  background-image: url("https://img.freepik.com/premium-photo/nature-sky-with-sunset-summer-environment-weather-background-vintage-color-tone-effect_1484-2487.jpg");
+  
+}
+
+/* Rain */
+.rain {
+  background-image: url("https://s3.amazonaws.com/static.beavercountyradio.com/wp-content/uploads/2019/05/27071943/rain.jpg");
+  
+}
+
+/* Snow */
+.snow {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5unfmKbunhAdEpBqp7oNOfv-cYFKwaFeTB-hlyImQSw&usqp=CAU&ec=48600113");
+  
+}
+
+.thunderstorm{
+    background-image: url('https://rare-gallery.com/thumbs/1091773-landscape-night-nature-rain-lightning-storm-atmosphere-thunder-cloud-weather-thunderstorm-darkness.jpg');
+}
+
+/* Else */
+.else {
+  background-image: url("https://brightpunjabexpress.com/wp-content/uploads/2020/11/foggy-weather.png");
+  
 }

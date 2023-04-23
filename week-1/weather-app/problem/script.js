@@ -1,7 +1,12 @@
+// clouds: https://i.ytimg.com/vi/Wimkqo8gDZ0/maxresdefault.jpg
+// clear: https://img.freepik.com/premium-photo/nature-sky-with-sunset-summer-environment-weather-background-vintage-color-tone-effect_1484-2487.jpg
+// rain: https://s3.amazonaws.com/static.beavercountyradio.com/wp-content/uploads/2019/05/27071943/rain.jpg
+// snow: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5unfmKbunhAdEpBqp7oNOfv-cYFKwaFeTB-hlyImQSw&usqp=CAU&ec=48600113
+// else: https://brightpunjabexpress.com/wp-content/uploads/2020/11/foggy-weather.png
 // example: 
 // api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=35d3fb6cb7ff970ced28cb23e3ee8a22
-function getWeather(cityName) {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}&units=metric`).
+function getWeather(cityName, units="imperial") {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}&units=${units}`).
     then(response => {
         if (!response.ok){
             throw new Error(response.status)
@@ -31,10 +36,33 @@ function getWeather(cityName) {
                     <div class="title">max</div>
                     <div class="temp">${stats.temp_max}&deg;</div>
                 </div>
+                <button id='convert'>F / C</button>
             </div>
         `
+        document.querySelector('#convert').addEventListener('click', (e) => {
+            if (units === 'imperial'){
+                units = 'metric'
+            } else{
+                units = 'imperial'
+            }
+    
+            getWeather(cityName,units)
+        })
+        setWeatherBackground(weather.main.toLowerCase());
+
     })
 }
+
+function setWeatherBackground(weather) {
+
+  document.body.classList.remove("clouds", "clear", "rain", "snow", "thunderstorm");
+  if (["clouds", "clear", "rain", "snow", "thunderstorm"].includes(weather)) {
+    document.body.classList.add(weather);
+  } else {
+    document.body.classList.add("else");
+  }
+}
+
 
 const form = document.querySelector('#search-form');
 const input = document.querySelector('#search-input');
