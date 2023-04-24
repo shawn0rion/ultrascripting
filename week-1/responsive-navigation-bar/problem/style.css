@@ -1,0 +1,92 @@
+:root{
+    --nav-height: 64px;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    outline: 0;
+    border: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+body{
+    position: relative;
+    height: 100vh;
+    z-index: -2;
+}
+
+nav{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: var(--nav-height);
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    padding: 0 20px;
+    justify-content: space-between;
+    border-bottom: 1px solid #222;
+    z-index: 2;
+}
+
+nav ul{
+    display: flex;
+    gap: 20px;
+    height: 100%;
+    align-items: center;
+}
+
+nav ul li{
+    list-style: none;
+}
+
+#menu-btn{
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#menu-btn i{
+    font-size: 1.4rem;
+}
+
+#menu-btn.hide{
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    #menu-btn.hide{
+        display: unset;
+    }
+    /* memorize solution here */
+    nav ul{
+        position: fixed;
+        z-index: 1;
+        flex-direction: column;
+        top: var(--nav-height);
+        left: 0;
+        width: 100%;
+        height: unset;  
+        gap: 0px;
+        background-color: #222;
+        transition: transform 0.4s ease-in-out;
+        transform: translateX(-100%);        
+    }
+
+    nav ul li {
+        padding: 10px 0;
+    }
+    nav ul li a{
+        color: #fff;
+    }
+
+    #navbar.show{
+        transform: translateX(0);
+    }
+}
