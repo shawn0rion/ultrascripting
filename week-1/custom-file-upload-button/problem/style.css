@@ -1,0 +1,65 @@
+*{
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type="file"]{
+    display: none;
+}
+
+#files-selected{
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+button{
+    width: 340px;
+    background-color: rgb(22, 75, 252);
+    text-align: center;    
+    font-size: 1.5rem;
+    color: #fff;
+    height: 120px;
+    text-transform: center;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: .3s ease;
+}
+button:hover,
+button:focus{
+    background-color: #0f9fff;
+}
+button i{
+    color: #fff;
+}
+ul{
+    list-style: none;
+}
+
+.selected-file{
+    width: 500px;
+    background: rgba(201, 242, 255, 0.5);
+    color: blue;
+    height: 60px;
+    padding: 0 10px;
+    border-radius: 10px;
+    line-height: 60px;
+}
+
+ul .selected-file:not(:last-child){
+    margin-bottom: 10px;
+}
+
+.size{
+    float: right;
+}
+
