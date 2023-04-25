@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+:root{
+    --primary-clr: #e0245d;
+    --secondary-clr: #f3ebe8;
+}
+
+body{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: var(--primary-clr);
+}
+
+.container{
+    font-family: 'Lato', sans-serif;
+    border: 1px solid #000;
+    display: grid;
+    grid-template-rows: 3fr, 1fr;
+    padding: 40px 20px;
+    background-color: var(--secondary-clr);
+    border-radius: 10px;
+    border: 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,.2);
+}
+
+.textareas{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+textarea{
+    width: 400px;
+    word-wrap: break-word;
+    font-size: 1rem;
+    padding: 5px 10px;
+    font-family: 'Lato', sans-serif;
+}
+
+input[type="number"]{
+    width: 40px;
+    height: 30px;
+    text-align: left;
+    font-size: 1rem;
+    padding: 0 2px;    
+    margin-left: 6px;
+}
+
+.row{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    justify-content: space-between;
+}
+
+.buttons > *{
+    height: 40px;
+    padding: 4px 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.line-input{
+    display: flex;
+    align-items: center;
+}
+.line-input :first-child{
+    font-size: 1.05rem;
+    line-height: 40px;
+}
+
+.buttons > button{
+    color: var(--secondary-clr);
+    border-color: var(--primary-clr);
+    background-color: var(--primary-clr);
+    font-family: 'Lato', sans-serif;
+}
